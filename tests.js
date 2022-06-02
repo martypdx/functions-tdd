@@ -2,6 +2,9 @@
 import {
     add,
     subtract,
+    getSeconds,
+    getArea,
+    sumLessThan100,
 } from './functions.js';
 
 const test = QUnit.test;
@@ -62,7 +65,16 @@ test('subtracts two numbers', (expect) => {
     Uses: Math operator(s)
 */
 
-/* 
+test('get seconds from minutes', (expect) => {
+    const minutes = 10;
+    const expected = 600;
+
+    const actual = getSeconds(minutes);
+
+    expect.equal(actual, expected);
+});
+
+/*
     Write a function that takes in the base and height
     of a triangle and returns its area (google it)
 
@@ -70,6 +82,16 @@ test('subtracts two numbers', (expect) => {
 
     Uses: Math operator(s)
 */
+
+test('get area of triangle', (expect) => {
+    const base = 5;
+    const height = 10;
+    const expected = 25;
+
+    const actual = getArea(base, height);
+
+    expect.equal(actual, expected);
+});
 
 /* 
     Write a function that takes in two 2 numbers
@@ -81,7 +103,31 @@ test('subtracts two numbers', (expect) => {
     88, 60 --> false
 
     Uses: Comparison operator(s), if/else control flow
+
+    if(sum < 100) {
+        return true;
+    }
 */
+
+test('sum less than 100', (expect) => {
+    const x = 25;
+    const y = 13;
+    const expected = true;
+
+    const actual = sumLessThan100(x, y);
+
+    expect.equal(actual, expected);
+});
+
+test('sum not less than 100', (expect) => {
+    const x = 88;
+    const y = 60;
+    const expected = false;
+
+    const actual = sumLessThan100(x, y);
+
+    expect.equal(actual, expected);
+});
 
 /* 
     Write a function that takes a number and
@@ -91,6 +137,8 @@ test('subtracts two numbers', (expect) => {
     6 --> 'even'
 
     Uses: modulo operator (remainder), comparison operator, if/else control flow
+
+    if(num % 2 === 0)
 */
 
 /* 
